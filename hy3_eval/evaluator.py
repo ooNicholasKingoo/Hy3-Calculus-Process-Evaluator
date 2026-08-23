@@ -20,7 +20,9 @@ def reference_solution(problem: CalculusProblem) -> CandidateSolution:
         steps = [SolutionStep(number=1, expression_before=problem.expression,
                               expression_after=after, explanation="参考答案的可验证步骤")]
     return CandidateSolution(problem_id=problem.id, category=problem.category,
-                             final_answer=problem.standard_answer, steps=steps)
+                             final_answer=problem.standard_answer, steps=steps,
+                             method_summary="使用确定性参考解法生成离线演示步骤。",
+                             assumptions=["参考答案仅用于离线演示，不代表 Hy3 输出"])
 
 def evaluate_process(problem: CalculusProblem, solution: CandidateSolution, *, api_failed: bool = False) -> EvaluationResult:
     final = validate_final_answer(problem, solution)

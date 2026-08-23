@@ -9,7 +9,13 @@ from dotenv import load_dotenv
 
 from .models import CandidateSolution, CalculusProblem, SolutionStep
 
-SYSTEM_PROMPT = """你是严谨的高等数学解题器。只输出一个 JSON 对象，不要 Markdown。字段为 final_answer 字符串和 steps 数组。每个 step 包含 number、expression_before、expression_after、theorem、condition、explanation。必须写出完整可检查的推导，不得编造条件。"""
+SYSTEM_PROMPT = """你是 Hy3 高等数学解题器，负责生成可审查的完整解答。
+只输出一个 JSON 对象，不要 Markdown，不要输出隐藏思维链或无法验证的内部联想。
+字段必须包含 final_answer、method_summary、assumptions、steps。
+steps 按真实推导顺序排列为 4-12 步，每步必须包含 number、expression_before、expression_after、theorem、condition、explanation。
+每一步都要写出实际公式变换或定理应用，不能用“显然”“类似可得”替代关键推导。
+如果使用洛必达、泰勒、换元、分部积分、隐函数求导或反常积分，必须明确写出适用条件。
+答案面向大学高等数学学习者，解释详细但不泄露模型隐藏内部思维过程。"""
 
 def _json_text(text: str) -> dict[str, Any]:
     text = text.strip()
@@ -23,8 +29,14 @@ def parse_solution(problem: CalculusProblem, text: str) -> CandidateSolution:
     try:
         payload = _json_text(text)
         steps = [SolutionStep.model_validate(s) for s in payload.get("steps", [])]
+        if len(steps) < 2:
+            raise ValueError("Hy3 返回的步骤少于 2 步，不符合完整解答要求")
+        assumptions = payload.get("assumptions", [])
+        if isinstance(assumptions, str): assumptions = [assumptions]
         return CandidateSolution(problem_id=problem.id, category=problem.category,
-                                 final_answer=str(payload.get("final_answer", "")), steps=steps, raw_text=text)
+                                 final_answer=str(payload.get("final_answer", "")), steps=steps,
+                                 method_summary=str(payload.get("method_summary", "")),
+                                 assumptions=[str(x) for x in assumptions], raw_text=text)
     except Exception as exc:
         return CandidateSolution(problem_id=problem.id, category=problem.category, final_answer="",
                                  steps=[], raw_text=text, parse_error=str(exc))
@@ -36,6 +48,7 @@ class Hy3Client:
         self.base_url = base_url or os.getenv("HY3_BASE_URL", "https://api.hunyuan.cloud.tencent.com/v1")
         self.model = model or os.getenv("HY3_MODEL", "hy3-295b")
         self.timeout = float(os.getenv("HY3_TIMEOUT", "90"))
+        self.reasoning_effort = os.getenv("HY3_REASONING_EFFORT", "high")
 
     def solve(self, problem: CalculusProblem) -> CandidateSolution:
         if not self.api_key:
@@ -44,9 +57,16 @@ class Hy3Client:
         client = OpenAI(api_key=self.api_key, base_url=self.base_url, timeout=self.timeout)
         prompt = {"problem": problem.prompt, "category": problem.category, "expression": problem.expression,
                   "point": problem.point, "lower": problem.lower, "upper": problem.upper}
-        response = client.chat.completions.create(model=self.model,
+        request = dict(model=self.model,
             messages=[{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)}],
-            temperature=0.2, response_format={"type": "json_object"})
+            temperature=0.2,
+            extra_body={"chat_template_kwargs": {"reasoning_effort": self.reasoning_effort}})
+        try:
+            response = client.chat.completions.create(**request, response_format={"type": "json_object"})
+        except Exception as exc:
+            if "response_format" not in str(exc).lower() and "json" not in str(exc).lower():
+                raise
+            response = client.chat.completions.create(**request)
         text = response.choices[0].message.content or ""
         result = parse_solution(problem, text)
         if result.parse_error:

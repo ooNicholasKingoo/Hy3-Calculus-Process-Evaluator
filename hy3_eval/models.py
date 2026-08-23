@@ -44,6 +44,8 @@ class CandidateSolution(BaseModel):
     category: Category
     final_answer: str
     steps: list[SolutionStep] = Field(default_factory=list)
+    method_summary: str = ""
+    assumptions: list[str] = Field(default_factory=list)
     raw_text: str = ""
     parse_error: str | None = None
 
