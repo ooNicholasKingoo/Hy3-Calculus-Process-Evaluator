@@ -12,8 +12,9 @@ Hy3 高等数学推理过程评估器是腾讯犀牛鸟开源实战活动的个�
 
 - Python 3.12+
 - `HY3_API_KEY`（运行真实 Hy3 请求时需要）
-- 默认接口：`https://api.hunyuan.cloud.tencent.com/v1`
-- 默认模型：`hy3-295b`
+- TokenHub 默认接口：`https://tokenhub.tencentmaas.com/v1`
+- TokenHub 默认模型：`hy3`
+- TokenHub Key 页面：[TokenHub 快速开始](https://console.cloud.tencent.com/tokenhub/quick-start?regionId=9)
 
 ## 安装与运行
 
@@ -27,7 +28,7 @@ Copy-Item .env.example .env
 streamlit run app.py
 ```
 
-也可以启动页面后，在左侧“Hy3 连接”中临时输入 API Key。该输入只保存在当前会话内存中，不会写入文件；正式复现建议使用 `.env`。
+也可以启动页面后，在左侧“Hy3 连接”中临时输入 TokenHub API Key。该输入只保存在当前会话内存中，不会写入文件；正式复现建议使用 `.env`。
 
 单题页默认使用 Hy3 在线模式。页面展示的是 Hy3 返回的结构化、可审查解答过程，包括方法概述、前提条件、每步公式变换、定理和解释；不会展示模型隐藏思维链。
 

@@ -1,4 +1,5 @@
 from hy3_eval.client import parse_solution
+from hy3_eval.client import Hy3Client
 from hy3_eval.dataset import build_problems
 
 def test_parse_json_solution():
@@ -17,3 +18,10 @@ def test_reject_non_json():
     problem = build_problems()[0]
     result = parse_solution(problem, "not json")
     assert result.parse_error
+
+def test_tokenhub_defaults(monkeypatch):
+    monkeypatch.delenv("HY3_BASE_URL", raising=False)
+    monkeypatch.delenv("HY3_MODEL", raising=False)
+    client = Hy3Client(api_key="test-key")
+    assert client.base_url == "https://tokenhub.tencentmaas.com/v1"
+    assert client.model == "hy3"

@@ -30,7 +30,7 @@ session_key = st.sidebar.text_input(
 active_api_key = os.getenv("HY3_API_KEY") or session_key.strip()
 active_model = os.getenv("HY3_MODEL", "hy3-295b")
 if has_hy3_key:
-    st.success(f"Hy3 在线模式 · {active_model} · {os.getenv('HY3_BASE_URL', 'https://api.hunyuan.cloud.tencent.com/v1')}")
+    st.success(f"Hy3 在线模式 · {active_model} · {os.getenv('HY3_BASE_URL', 'https://tokenhub.tencentmaas.com/v1')}")
 elif active_api_key:
     st.success(f"Hy3 在线模式（当前会话 Key） · {active_model}")
 else:

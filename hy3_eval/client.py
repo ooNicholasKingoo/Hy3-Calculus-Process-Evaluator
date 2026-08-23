@@ -45,8 +45,10 @@ class Hy3Client:
     def __init__(self, api_key: str | None = None, base_url: str | None = None, model: str | None = None):
         load_dotenv()
         self.api_key = api_key or os.getenv("HY3_API_KEY")
-        self.base_url = base_url or os.getenv("HY3_BASE_URL", "https://api.hunyuan.cloud.tencent.com/v1")
-        self.model = model or os.getenv("HY3_MODEL", "hy3-295b")
+        # TokenHub is the Tencent Cloud gateway used by the activity API key.
+        # Direct Hunyuan access remains configurable through HY3_BASE_URL.
+        self.base_url = base_url or os.getenv("HY3_BASE_URL", "https://tokenhub.tencentmaas.com/v1")
+        self.model = model or os.getenv("HY3_MODEL", "hy3")
         self.timeout = float(os.getenv("HY3_TIMEOUT", "90"))
         self.reasoning_effort = os.getenv("HY3_REASONING_EFFORT", "high")
 
@@ -60,7 +62,7 @@ class Hy3Client:
         request = dict(model=self.model,
             messages=[{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)}],
             temperature=0.2,
-            extra_body={"chat_template_kwargs": {"reasoning_effort": self.reasoning_effort}})
+            reasoning_effort=self.reasoning_effort)
         try:
             response = client.chat.completions.create(**request, response_format={"type": "json_object"})
         except Exception as exc:
