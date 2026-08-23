@@ -1,0 +1,1560 @@
+{
+  "total": 60,
+  "completed": 60,
+  "api_failures": 0,
+  "final_answer_accuracy": 1.0,
+  "process_accuracy": 0.9,
+  "first_error_detection_rate": null,
+  "first_error_localization_accuracy": null,
+  "by_difficulty": {
+    "basic": {
+      "count": 20.0,
+      "final_answer_accuracy": 1.0,
+      "process_accuracy": 1.0
+    },
+    "intermediate": {
+      "count": 20.0,
+      "final_answer_accuracy": 1.0,
+      "process_accuracy": 0.95
+    },
+    "advanced": {
+      "count": 20.0,
+      "final_answer_accuracy": 1.0,
+      "process_accuracy": 0.75
+    }
+  },
+  "by_category": {
+    "limit": {
+      "count": 21.0,
+      "final_answer_accuracy": 1.0,
+      "process_accuracy": 1.0
+    },
+    "derivative": {
+      "count": 21.0,
+      "final_answer_accuracy": 1.0,
+      "process_accuracy": 0.7142857142857143
+    },
+    "integral": {
+      "count": 18.0,
+      "final_answer_accuracy": 1.0,
+      "process_accuracy": 1.0
+    }
+  },
+  "error_type_distribution": {
+    "代数/微积分计算错误": 6
+  },
+  "results": [
+    {
+      "problem_id": "B-01",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1",
+        "actual": "1",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-02",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/2",
+        "actual": "1/2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-03",
+      "final_answer": {
+        "status": "valid",
+        "expected": "4",
+        "actual": "4",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-04",
+      "final_answer": {
+        "status": "valid",
+        "expected": "3",
+        "actual": "3",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-05",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1",
+        "actual": "1",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-06",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1",
+        "actual": "1",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-07",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/2",
+        "actual": "1/2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-08",
+      "final_answer": {
+        "status": "valid",
+        "expected": "3*x**2-2",
+        "actual": "3*x**2-2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-09",
+      "final_answer": {
+        "status": "valid",
+        "expected": "cos(x)+exp(x)",
+        "actual": "cos(x)+exp(x)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-10",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/x",
+        "actual": "1/x",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-11",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/(2*sqrt(x))",
+        "actual": "1/(2*sqrt(x))",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-12",
+      "final_answer": {
+        "status": "valid",
+        "expected": "sin(x)+x*cos(x)",
+        "actual": "sin(x)+x*cos(x)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-13",
+      "final_answer": {
+        "status": "valid",
+        "expected": "2*x*cos(x**2)",
+        "actual": "2*x*cos(x**2)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-14",
+      "final_answer": {
+        "status": "valid",
+        "expected": "-1/(x+1)**2",
+        "actual": "-1/(x+1)**2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-15",
+      "final_answer": {
+        "status": "valid",
+        "expected": "x**3-2*x**2+x",
+        "actual": "x**3-2*x**2+x",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "对结果求导后恢复原被积函数",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-16",
+      "final_answer": {
+        "status": "valid",
+        "expected": "sin(x)",
+        "actual": "sin(x)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "对结果求导后恢复原被积函数",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-17",
+      "final_answer": {
+        "status": "valid",
+        "expected": "exp(x)",
+        "actual": "exp(x)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "对结果求导后恢复原被积函数",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-18",
+      "final_answer": {
+        "status": "valid",
+        "expected": "log(x)",
+        "actual": "log(x)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "对结果求导后恢复原被积函数",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-19",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/3",
+        "actual": "1/3",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "B-20",
+      "final_answer": {
+        "status": "valid",
+        "expected": "2",
+        "actual": "2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-01",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/3",
+        "actual": "1/3",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-02",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/2",
+        "actual": "1/2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-03",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1",
+        "actual": "1",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-04",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1",
+        "actual": "1",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-05",
+      "final_answer": {
+        "status": "valid",
+        "expected": "2",
+        "actual": "2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-06",
+      "final_answer": {
+        "status": "valid",
+        "expected": "3",
+        "actual": "3",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-07",
+      "final_answer": {
+        "status": "valid",
+        "expected": "-1/8",
+        "actual": "-1/8",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-08",
+      "final_answer": {
+        "status": "valid",
+        "expected": "10*x*(x**2+1)**4",
+        "actual": "10*x*(x**2+1)**4",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-09",
+      "final_answer": {
+        "status": "valid",
+        "expected": "x**x*(log(x)+1)",
+        "actual": "x**x*(log(x)+1)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-10",
+      "final_answer": {
+        "status": "valid",
+        "expected": "2*x/(1+x**4)",
+        "actual": "2*x/(1+x**4)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-11",
+      "final_answer": {
+        "status": "valid",
+        "expected": "-x/y",
+        "actual": "-x/y",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "invalid",
+          "error_type": "代数/微积分计算错误",
+          "evidence": "期望导数为 2*x，实际为 -x/y",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": false,
+      "first_error_step": 1,
+      "error_types": [
+        "代数/微积分计算错误"
+      ],
+      "answer_correct_but_process_invalid": true,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-12",
+      "final_answer": {
+        "status": "valid",
+        "expected": "sin(x)**x*(log(sin(x))+x*cos(x)/sin(x))",
+        "actual": "sin(x)**x*(log(sin(x))+x*cos(x)/sin(x))",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-13",
+      "final_answer": {
+        "status": "valid",
+        "expected": "x*exp(x)/(1+x)**2",
+        "actual": "x*exp(x)/(1+x)**2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-14",
+      "final_answer": {
+        "status": "valid",
+        "expected": "cos(x)/sin(x)",
+        "actual": "cos(x)/sin(x)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-15",
+      "final_answer": {
+        "status": "valid",
+        "expected": "sin(x**2)",
+        "actual": "sin(x**2)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "对结果求导后恢复原被积函数",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-16",
+      "final_answer": {
+        "status": "valid",
+        "expected": "(x-1)*exp(x)",
+        "actual": "(x-1)*exp(x)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "对结果求导后恢复原被积函数",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-17",
+      "final_answer": {
+        "status": "valid",
+        "expected": "log(1+x**2)/2",
+        "actual": "log(1+x**2)/2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "对结果求导后恢复原被积函数",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-18",
+      "final_answer": {
+        "status": "valid",
+        "expected": "-1/4",
+        "actual": "-1/4",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-19",
+      "final_answer": {
+        "status": "valid",
+        "expected": "pi",
+        "actual": "pi",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "I-20",
+      "final_answer": {
+        "status": "valid",
+        "expected": "pi/4",
+        "actual": "pi/4",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-01",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/2",
+        "actual": "1/2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-02",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/120",
+        "actual": "1/120",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-03",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/2",
+        "actual": "1/2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-04",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/3",
+        "actual": "1/3",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-05",
+      "final_answer": {
+        "status": "valid",
+        "expected": "E",
+        "actual": "E",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-06",
+      "final_answer": {
+        "status": "valid",
+        "expected": "exp(-1/2)",
+        "actual": "exp(-1/2)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-07",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/3",
+        "actual": "1/3",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "左右极限与变形结果一致",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-08",
+      "final_answer": {
+        "status": "valid",
+        "expected": "x**sin(x)*(cos(x)*log(x)+sin(x)/x)",
+        "actual": "x**sin(x)*(cos(x)*log(x)+sin(x)/x)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-09",
+      "final_answer": {
+        "status": "valid",
+        "expected": "-y/(x+cos(y))",
+        "actual": "-y/(x+cos(y))",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "invalid",
+          "error_type": "代数/微积分计算错误",
+          "evidence": "期望导数为 y，实际为 -y/(x + cos(y))",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": false,
+      "first_error_step": 1,
+      "error_types": [
+        "代数/微积分计算错误"
+      ],
+      "answer_correct_but_process_invalid": true,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-10",
+      "final_answer": {
+        "status": "valid",
+        "expected": "2*x/sqrt(1+x**4)",
+        "actual": "2*x/sqrt(1+x**4)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-11",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1",
+        "actual": "1",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "invalid",
+          "error_type": "代数/微积分计算错误",
+          "evidence": "期望导数为 0，实际为 1",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": false,
+      "first_error_step": 1,
+      "error_types": [
+        "代数/微积分计算错误"
+      ],
+      "answer_correct_but_process_invalid": true,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-12",
+      "final_answer": {
+        "status": "valid",
+        "expected": "0",
+        "actual": "0",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "invalid",
+          "error_type": "代数/微积分计算错误",
+          "evidence": "期望导数为 sign(x)，实际为 0",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": false,
+      "first_error_step": 1,
+      "error_types": [
+        "代数/微积分计算错误"
+      ],
+      "answer_correct_but_process_invalid": true,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-13",
+      "final_answer": {
+        "status": "valid",
+        "expected": "x/(1-x**2)**(3/2)",
+        "actual": "x/(1-x**2)**(3/2)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "invalid",
+          "error_type": "代数/微积分计算错误",
+          "evidence": "期望导数为 1/sqrt(1 - x**2)，实际为 x/(1 - x**2)**(3/2)",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": false,
+      "first_error_step": 1,
+      "error_types": [
+        "代数/微积分计算错误"
+      ],
+      "answer_correct_but_process_invalid": true,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-14",
+      "final_answer": {
+        "status": "valid",
+        "expected": "2*log(x)+3",
+        "actual": "2*log(x)+3",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "invalid",
+          "error_type": "代数/微积分计算错误",
+          "evidence": "期望导数为 2*x*log(x) + x，实际为 2*log(x) + 3",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": false,
+      "first_error_step": 1,
+      "error_types": [
+        "代数/微积分计算错误"
+      ],
+      "answer_correct_but_process_invalid": true,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-15",
+      "final_answer": {
+        "status": "valid",
+        "expected": "x*log(x)-x",
+        "actual": "x*log(x)-x",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-16",
+      "final_answer": {
+        "status": "valid",
+        "expected": "(x**2-2*x+2)*exp(x)",
+        "actual": "(x**2-2*x+2)*exp(x)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-17",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1/(p-1)",
+        "actual": "1/(p-1)",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-18",
+      "final_answer": {
+        "status": "valid",
+        "expected": "1",
+        "actual": "1",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-19",
+      "final_answer": {
+        "status": "valid",
+        "expected": "-pi**2/12",
+        "actual": "-pi**2/12",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    },
+    {
+      "problem_id": "A-20",
+      "final_answer": {
+        "status": "valid",
+        "expected": "-pi*log(2)/2",
+        "actual": "-pi*log(2)/2",
+        "evidence": "符号化简后与标准答案等价"
+      },
+      "steps": [
+        {
+          "number": 1,
+          "status": "valid",
+          "error_type": null,
+          "evidence": "表达式保持等价",
+          "affected": false,
+          "llm_review": null
+        }
+      ],
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
+      "api_failed": false,
+      "metadata": {}
+    }
+  ]
+}
