@@ -16,7 +16,7 @@ def reference_solution(problem: CalculusProblem) -> CandidateSolution:
     if not steps:
         # The final value is checked separately. For a definite integral, the
         # integrand and the scalar value are not a valid symbolic transition.
-        after = problem.expression if problem.answer_type == "definite_integral" else problem.standard_answer
+        after = problem.expression if problem.answer_type == "definite_integral" or problem.answer_mode == "text" else problem.standard_answer
         steps = [SolutionStep(number=1, expression_before=problem.expression,
                               expression_after=after, explanation="参考答案的可验证步骤")]
     return CandidateSolution(problem_id=problem.id, category=problem.category,
@@ -78,9 +78,13 @@ def run_benchmark(problems: Iterable[CalculusProblem], client: Hy3Client | None 
     completed = [r for r in results if not r.api_failed]
     problem_map = {p.id: p for p in selected}
     errors = Counter(t for r in completed for t in r.error_types)
+    invalid_steps = sum(any(step.status == "invalid" for step in r.steps) for r in completed)
+    uncertain_steps = sum(any(step.status == "uncertain" for step in r.steps) for r in completed)
     return BenchmarkReport(total=len(selected), completed=len(completed), api_failures=failures,
         final_answer_accuracy=sum(r.final_answer.status == "valid" for r in completed) / len(completed) if completed else 0.0,
         process_accuracy=sum(r.process_correct for r in completed) / len(completed) if completed else 0.0,
+        deterministic_error_rate=invalid_steps / len(completed) if completed else 0.0,
+        uncertain_process_rate=uncertain_steps / len(completed) if completed else 0.0,
         by_difficulty=_group_metrics(completed, problem_map, "difficulty") if completed else {},
         by_category=_group_metrics(completed, problem_map, "category") if completed else {},
         error_type_distribution=dict(errors), results=results)

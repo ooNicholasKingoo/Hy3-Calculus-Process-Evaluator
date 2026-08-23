@@ -84,7 +84,10 @@ elif mode == "批量评测":
         report = run_benchmark(problems, client=Hy3Client(api_key=active_api_key), offline=offline, limit=limit)
         st.session_state["report"] = report.model_dump()
         st.success(f"完成 {report.completed}/{report.total} 题，API 失败 {report.api_failures} 题")
-        st.json({"最终答案准确率": report.final_answer_accuracy, "过程正确率": report.process_accuracy})
+        st.json({"最终答案准确率": report.final_answer_accuracy,
+                 "过程正确率": report.process_accuracy,
+                 "确定性步骤错误率": report.deterministic_error_rate,
+                 "待审查步骤比例": report.uncertain_process_rate})
 
 else:
     report_path = ROOT / "reports" / "latest_benchmark.json"
@@ -98,6 +101,7 @@ else:
         c1.metric("最终答案准确率", f"{data['final_answer_accuracy']:.1%}")
         c2.metric("过程正确率", f"{data['process_accuracy']:.1%}")
         c3.metric("API 失败", data["api_failures"])
+        st.caption(f"确定性步骤错误率：{data.get('deterministic_error_rate', 0):.1%} · 待审查步骤比例：{data.get('uncertain_process_rate', 0):.1%}。待审查不等于数学错误。")
         rows = []
         for name, metrics in data.get("by_difficulty", {}).items(): rows.append({"难度": name, **metrics})
         if rows:

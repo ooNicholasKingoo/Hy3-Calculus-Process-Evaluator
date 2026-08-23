@@ -26,6 +26,9 @@ class CalculusProblem(BaseModel):
     upper: str | None = None
     answer_type: Literal["limit", "derivative", "antiderivative", "definite_integral"]
     standard_answer: str
+    answer_mode: Literal["expression", "text"] = "expression"
+    derivative_order: int = 1
+    metadata: dict[str, str] = Field(default_factory=dict)
     reference_steps: list[ReferenceStep] = Field(default_factory=list)
     tags: list[str] = Field(default_factory=list)
     source: str = "原创/程序化构造"
@@ -80,6 +83,8 @@ class BenchmarkReport(BaseModel):
     api_failures: int
     final_answer_accuracy: float
     process_accuracy: float
+    deterministic_error_rate: float = 0.0
+    uncertain_process_rate: float = 0.0
     first_error_detection_rate: float | None = None
     first_error_localization_accuracy: float | None = None
     by_difficulty: dict[str, dict[str, float]] = Field(default_factory=dict)

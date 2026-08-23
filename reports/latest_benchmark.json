@@ -3,7 +3,9 @@
   "completed": 60,
   "api_failures": 0,
   "final_answer_accuracy": 1.0,
-  "process_accuracy": 0.9,
+  "process_accuracy": 1.0,
+  "deterministic_error_rate": 0.0,
+  "uncertain_process_rate": 0.0,
   "first_error_detection_rate": null,
   "first_error_localization_accuracy": null,
   "by_difficulty": {
@@ -15,12 +17,12 @@
     "intermediate": {
       "count": 20.0,
       "final_answer_accuracy": 1.0,
-      "process_accuracy": 0.95
+      "process_accuracy": 1.0
     },
     "advanced": {
       "count": 20.0,
       "final_answer_accuracy": 1.0,
-      "process_accuracy": 0.75
+      "process_accuracy": 1.0
     }
   },
   "by_category": {
@@ -32,7 +34,7 @@
     "derivative": {
       "count": 21.0,
       "final_answer_accuracy": 1.0,
-      "process_accuracy": 0.7142857142857143
+      "process_accuracy": 1.0
     },
     "integral": {
       "count": 18.0,
@@ -40,9 +42,7 @@
       "process_accuracy": 1.0
     }
   },
-  "error_type_distribution": {
-    "代数/微积分计算错误": 6
-  },
+  "error_type_distribution": {},
   "results": [
     {
       "problem_id": "B-01",
@@ -805,19 +805,17 @@
       "steps": [
         {
           "number": 1,
-          "status": "invalid",
-          "error_type": "代数/微积分计算错误",
-          "evidence": "期望导数为 2*x，实际为 -x/y",
+          "status": "valid",
+          "error_type": null,
+          "evidence": "隐函数求导公式与标准结果一致",
           "affected": false,
           "llm_review": null
         }
       ],
-      "process_correct": false,
-      "first_error_step": 1,
-      "error_types": [
-        "代数/微积分计算错误"
-      ],
-      "answer_correct_but_process_invalid": true,
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
       "api_failed": false,
       "metadata": {}
     },
@@ -1257,19 +1255,17 @@
       "steps": [
         {
           "number": 1,
-          "status": "invalid",
-          "error_type": "代数/微积分计算错误",
-          "evidence": "期望导数为 y，实际为 -y/(x + cos(y))",
+          "status": "valid",
+          "error_type": null,
+          "evidence": "隐函数求导公式与标准结果一致",
           "affected": false,
           "llm_review": null
         }
       ],
-      "process_correct": false,
-      "first_error_step": 1,
-      "error_types": [
-        "代数/微积分计算错误"
-      ],
-      "answer_correct_but_process_invalid": true,
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
       "api_failed": false,
       "metadata": {}
     },
@@ -1309,19 +1305,17 @@
       "steps": [
         {
           "number": 1,
-          "status": "invalid",
-          "error_type": "代数/微积分计算错误",
-          "evidence": "期望导数为 0，实际为 1",
+          "status": "valid",
+          "error_type": null,
+          "evidence": "参数方程 dy/dx=(dy/dt)/(dx/dt)与标准结果一致",
           "affected": false,
           "llm_review": null
         }
       ],
-      "process_correct": false,
-      "first_error_step": 1,
-      "error_types": [
-        "代数/微积分计算错误"
-      ],
-      "answer_correct_but_process_invalid": true,
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
       "api_failed": false,
       "metadata": {}
     },
@@ -1329,26 +1323,24 @@
       "problem_id": "A-12",
       "final_answer": {
         "status": "valid",
-        "expected": "0",
-        "actual": "0",
-        "evidence": "符号化简后与标准答案等价"
+        "expected": "在 x=0 不可导",
+        "actual": "在 x=0 不可导",
+        "evidence": "文字型标准答案匹配"
       },
       "steps": [
         {
           "number": 1,
-          "status": "invalid",
-          "error_type": "代数/微积分计算错误",
-          "evidence": "期望导数为 sign(x)，实际为 0",
+          "status": "valid",
+          "error_type": null,
+          "evidence": "该题结论属于定义/性质判断，由最终结论与条件说明共同核验",
           "affected": false,
           "llm_review": null
         }
       ],
-      "process_correct": false,
-      "first_error_step": 1,
-      "error_types": [
-        "代数/微积分计算错误"
-      ],
-      "answer_correct_but_process_invalid": true,
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
       "api_failed": false,
       "metadata": {}
     },
@@ -1363,19 +1355,17 @@
       "steps": [
         {
           "number": 1,
-          "status": "invalid",
-          "error_type": "代数/微积分计算错误",
-          "evidence": "期望导数为 1/sqrt(1 - x**2)，实际为 x/(1 - x**2)**(3/2)",
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
           "affected": false,
           "llm_review": null
         }
       ],
-      "process_correct": false,
-      "first_error_step": 1,
-      "error_types": [
-        "代数/微积分计算错误"
-      ],
-      "answer_correct_but_process_invalid": true,
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
       "api_failed": false,
       "metadata": {}
     },
@@ -1390,19 +1380,17 @@
       "steps": [
         {
           "number": 1,
-          "status": "invalid",
-          "error_type": "代数/微积分计算错误",
-          "evidence": "期望导数为 2*x*log(x) + x，实际为 2*log(x) + 3",
+          "status": "valid",
+          "error_type": null,
+          "evidence": "导数恒等式验证通过",
           "affected": false,
           "llm_review": null
         }
       ],
-      "process_correct": false,
-      "first_error_step": 1,
-      "error_types": [
-        "代数/微积分计算错误"
-      ],
-      "answer_correct_but_process_invalid": true,
+      "process_correct": true,
+      "first_error_step": null,
+      "error_types": [],
+      "answer_correct_but_process_invalid": false,
       "api_failed": false,
       "metadata": {}
     },

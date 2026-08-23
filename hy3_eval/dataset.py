@@ -11,11 +11,13 @@ from .models import CalculusProblem, ReferenceStep
 def _p(pid: str, category: str, difficulty: str, prompt: str, expression: str,
        answer_type: str, answer: str, *, point: str | None = None,
        lower: str | None = None, upper: str | None = None, tags: list[str] | None = None,
-       steps: list[ReferenceStep] | None = None) -> CalculusProblem:
+       steps: list[ReferenceStep] | None = None, answer_mode: str = "expression",
+       derivative_order: int = 1, metadata: dict[str, str] | None = None) -> CalculusProblem:
     return CalculusProblem(id=pid, category=category, difficulty=difficulty, prompt=prompt,
                            expression=expression, point=point, lower=lower, upper=upper,
                            answer_type=answer_type, standard_answer=answer, tags=tags or [],
-                           reference_steps=steps or [])
+                           reference_steps=steps or [], answer_mode=answer_mode,
+                           derivative_order=derivative_order, metadata=metadata or {})
 
 
 def build_problems() -> list[CalculusProblem]:
@@ -79,7 +81,9 @@ def build_problems() -> list[CalculusProblem]:
         kwargs = {"point": point, "tags": tags}
         if typ == "definite_integral":
             kwargs.update(lower="0", upper="pi" if "pi" in prompt else "1")
-        out.append(_p(f"I-{i:02d}", cat, "intermediate", prompt, expr, typ, ans, **kwargs))
+        extra = {}
+        if "隐函数" in prompt or "dy/dx" in prompt: extra["metadata"] = {"special_validation": "implicit", "expected_step": ans}
+        out.append(_p(f"I-{i:02d}", cat, "intermediate", prompt, expr, typ, ans, **kwargs, **extra))
 
     advanced = [
         ("limit", "lim_{x→0} (1/x - 1/(exp(x)-1))", "1/x-1/(exp(x)-1)", "1/2", "0", ["洛必达", "泰勒展开"]),
@@ -93,7 +97,7 @@ def build_problems() -> list[CalculusProblem]:
         ("derivative", "由 x*y+sin(y)=1 求 y'", "x*y+sin(y)", "-y/(x+cos(y))", None, ["隐函数求导"]),
         ("derivative", "求 y=log(x^2+sqrt(1+x^4)) 的导数", "log(x**2+sqrt(1+x**4))", "2*x/sqrt(1+x**4)", None, ["复合函数"]),
         ("derivative", "求参数方程 x=t^2+1,y=t^3-t 在 t=1 处 dy/dx", "(t**3-t)/(t**2+1)", "1", None, ["参数方程"]),
-        ("derivative", "求 f(x)=|x| 在 x=0 是否可导", "Abs(x)", "0", None, ["不可导点"]),
+        ("derivative", "求 f(x)=|x| 在 x=0 是否可导", "Abs(x)", "在 x=0 不可导", None, ["不可导点"]),
         ("derivative", "求 y=arcsin(x) 的二阶导数", "asin(x)", "x/(1-x**2)**(3/2)", None, ["高阶导数"]),
         ("derivative", "求 y=x^2*log(x) 的二阶导数", "x**2*log(x)", "2*log(x)+3", None, ["高阶导数"]),
         ("integral", "求 ∫log(x)dx", "log(x)", "x*log(x)-x", None, ["分部积分"]),
@@ -107,7 +111,13 @@ def build_problems() -> list[CalculusProblem]:
         typ = "limit" if cat == "limit" else "derivative" if cat == "derivative" else "definite_integral"
         kwargs = {"point": point, "tags": tags}
         if typ == "definite_integral": kwargs.update(lower="0", upper="oo")
-        out.append(_p(f"A-{i:02d}", cat, "advanced", prompt, expr, typ, ans, **kwargs))
+        extra = {}
+        if cat == "derivative" and "二阶" in prompt: extra["derivative_order"] = 2
+        if "不可导" in prompt or "是否可导" in prompt: extra["answer_mode"] = "text"
+        if "参数方程" in prompt: extra["metadata"] = {"derivative_rule": "dy/dx=(dy/dt)/(dx/dt)", "evaluation_point": "t=1"}
+        if "参数方程" in prompt: extra["metadata"]["special_validation"] = "parameter"
+        if "由 x*y" in prompt: extra["metadata"] = {"special_validation": "implicit", "expected_step": ans}
+        out.append(_p(f"A-{i:02d}", cat, "advanced", prompt, expr, typ, ans, **kwargs, **extra))
     return out
 
 

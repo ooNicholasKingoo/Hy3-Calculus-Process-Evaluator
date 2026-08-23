@@ -31,6 +31,8 @@ def main() -> None:
         print(json.dumps({"total": report.total, "completed": report.completed,
                           "final_answer_accuracy": report.final_answer_accuracy,
                           "process_accuracy": report.process_accuracy,
+                          "deterministic_error_rate": report.deterministic_error_rate,
+                          "uncertain_process_rate": report.uncertain_process_rate,
                           "api_failures": report.api_failures}, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":
