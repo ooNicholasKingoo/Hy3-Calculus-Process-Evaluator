@@ -6,6 +6,7 @@
   "process_accuracy": 1.0,
   "deterministic_error_rate": 0.0,
   "uncertain_process_rate": 0.0,
+  "answer_correct_process_invalid_rate": 0.0,
   "first_error_detection_rate": null,
   "first_error_localization_accuracy": null,
   "by_difficulty": {
@@ -50,7 +51,12 @@
         "status": "valid",
         "expected": "1",
         "actual": "1",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "1",
+        "actual_unicode": "1",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -59,15 +65,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{\\sin{\\left(x \\right)}}{x}",
+          "latex_after": null,
+          "unicode_before": "(sin{(x )})/(x)",
+          "unicode_after": "1",
+          "formula_parse_status": "fallback"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：极限"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-02",
@@ -75,7 +118,12 @@
         "status": "valid",
         "expected": "1/2",
         "actual": "1/2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{2}",
+        "actual_latex": "\\frac{1}{2}",
+        "expected_unicode": "(1)/(2)",
+        "actual_unicode": "(1)/(2)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -84,15 +132,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{1 - \\cos{\\left(x \\right)}}{x^{2}}",
+          "latex_after": "\\frac{1}{2}",
+          "unicode_before": "(1 - cos{(x )})/(x²)",
+          "unicode_after": "(1)/(2)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：极限"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-03",
@@ -100,7 +185,12 @@
         "status": "valid",
         "expected": "4",
         "actual": "4",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "4",
+        "actual_unicode": "4",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -109,15 +199,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{x^{2} - 4}{x - 2}",
+          "latex_after": null,
+          "unicode_before": "(x² - 4)/(x - 2)",
+          "unicode_after": "4",
+          "formula_parse_status": "fallback"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "valid",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "已出现："
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-04",
@@ -125,7 +252,12 @@
         "status": "valid",
         "expected": "3",
         "actual": "3",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "3",
+        "actual_unicode": "3",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -134,15 +266,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{3 x^{2} + 1}{x^{2} - 2}",
+          "latex_after": null,
+          "unicode_before": "(3 x² + 1)/(x² - 2)",
+          "unicode_after": "3",
+          "formula_parse_status": "fallback"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "valid",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "已出现："
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-05",
@@ -150,7 +319,12 @@
         "status": "valid",
         "expected": "1",
         "actual": "1",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "1",
+        "actual_unicode": "1",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -159,15 +333,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{e^{x} - 1}{x}",
+          "latex_after": null,
+          "unicode_before": "(ex - 1)/(x)",
+          "unicode_after": "1",
+          "formula_parse_status": "fallback"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "valid",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "已出现："
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-06",
@@ -175,7 +386,12 @@
         "status": "valid",
         "expected": "1",
         "actual": "1",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "1",
+        "actual_unicode": "1",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -184,15 +400,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{\\log{\\left(x \\right)}}{x - 1}",
+          "latex_after": null,
+          "unicode_before": "(log{(x )})/(x - 1)",
+          "unicode_after": "1",
+          "formula_parse_status": "fallback"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "valid",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "已出现："
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-07",
@@ -200,7 +453,12 @@
         "status": "valid",
         "expected": "1/2",
         "actual": "1/2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{2}",
+        "actual_latex": "\\frac{1}{2}",
+        "expected_unicode": "(1)/(2)",
+        "actual_unicode": "(1)/(2)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -209,15 +467,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{\\sqrt{x + 1} - 1}{x}",
+          "latex_after": "\\frac{1}{2}",
+          "unicode_before": "(√(x + 1) - 1)/(x)",
+          "unicode_after": "(1)/(2)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：有理化"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-08",
@@ -225,7 +520,12 @@
         "status": "valid",
         "expected": "3*x**2-2",
         "actual": "3*x**2-2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "3 x^{2} - 2",
+        "actual_latex": "3 x^{2} - 2",
+        "expected_unicode": "3 x² - 2",
+        "actual_unicode": "3 x² - 2",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -234,15 +534,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x^{3} - 2 x + 1",
+          "latex_after": "3 x^{2} - 2",
+          "unicode_before": "x³ - 2 x + 1",
+          "unicode_after": "3 x² - 2",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：求导"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-09",
@@ -250,7 +587,12 @@
         "status": "valid",
         "expected": "cos(x)+exp(x)",
         "actual": "cos(x)+exp(x)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "e^{x} + \\cos{\\left(x \\right)}",
+        "actual_latex": "e^{x} + \\cos{\\left(x \\right)}",
+        "expected_unicode": "ex + cos{(x )}",
+        "actual_unicode": "ex + cos{(x )}",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -259,15 +601,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "e^{x} + \\sin{\\left(x \\right)}",
+          "latex_after": "e^{x} + \\cos{\\left(x \\right)}",
+          "unicode_before": "ex + sin{(x )}",
+          "unicode_after": "ex + cos{(x )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：求导"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-10",
@@ -275,7 +654,12 @@
         "status": "valid",
         "expected": "1/x",
         "actual": "1/x",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{x}",
+        "actual_latex": "\\frac{1}{x}",
+        "expected_unicode": "(1)/(x)",
+        "actual_unicode": "(1)/(x)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -284,15 +668,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\log{\\left(x \\right)}",
+          "latex_after": "\\frac{1}{x}",
+          "unicode_before": "log{(x )}",
+          "unicode_after": "(1)/(x)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：对数、导数"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-11",
@@ -300,7 +721,12 @@
         "status": "valid",
         "expected": "1/(2*sqrt(x))",
         "actual": "1/(2*sqrt(x))",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{2 \\sqrt{x}}",
+        "actual_latex": "\\frac{1}{2 \\sqrt{x}}",
+        "expected_unicode": "(1)/(2 √(x))",
+        "actual_unicode": "(1)/(2 √(x))",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -309,15 +735,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\sqrt{x}",
+          "latex_after": "\\frac{1}{2 \\sqrt{x}}",
+          "unicode_before": "√(x)",
+          "unicode_after": "(1)/(2 √(x))",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "valid",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "已出现："
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-12",
@@ -325,7 +788,12 @@
         "status": "valid",
         "expected": "sin(x)+x*cos(x)",
         "actual": "sin(x)+x*cos(x)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "x \\cos{\\left(x \\right)} + \\sin{\\left(x \\right)}",
+        "actual_latex": "x \\cos{\\left(x \\right)} + \\sin{\\left(x \\right)}",
+        "expected_unicode": "x cos{(x )} + sin{(x )}",
+        "actual_unicode": "x cos{(x )} + sin{(x )}",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -334,15 +802,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x \\sin{\\left(x \\right)}",
+          "latex_after": "x \\cos{\\left(x \\right)} + \\sin{\\left(x \\right)}",
+          "unicode_before": "x sin{(x )}",
+          "unicode_after": "x cos{(x )} + sin{(x )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：乘积"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-13",
@@ -350,7 +855,12 @@
         "status": "valid",
         "expected": "2*x*cos(x**2)",
         "actual": "2*x*cos(x**2)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "2 x \\cos{\\left(x^{2} \\right)}",
+        "actual_latex": "2 x \\cos{\\left(x^{2} \\right)}",
+        "expected_unicode": "2 x cos{(x² )}",
+        "actual_unicode": "2 x cos{(x² )}",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -359,15 +869,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\sin{\\left(x^{2} \\right)}",
+          "latex_after": "2 x \\cos{\\left(x^{2} \\right)}",
+          "unicode_before": "sin{(x² )}",
+          "unicode_after": "2 x cos{(x² )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：复合、链式"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-14",
@@ -375,7 +922,12 @@
         "status": "valid",
         "expected": "-1/(x+1)**2",
         "actual": "-1/(x+1)**2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "- \\frac{1}{\\left(x + 1\\right)^{2}}",
+        "actual_latex": "- \\frac{1}{\\left(x + 1\\right)^{2}}",
+        "expected_unicode": "- (1)/((x + 1)²)",
+        "actual_unicode": "- (1)/((x + 1)²)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -384,15 +936,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{1}{x + 1}",
+          "latex_after": "- \\frac{1}{\\left(x + 1\\right)^{2}}",
+          "unicode_before": "(1)/(x + 1)",
+          "unicode_after": "- (1)/((x + 1)²)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：求导"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-15",
@@ -400,7 +989,12 @@
         "status": "valid",
         "expected": "x**3-2*x**2+x",
         "actual": "x**3-2*x**2+x",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "x^{3} - 2 x^{2} + x",
+        "actual_latex": "x^{3} - 2 x^{2} + x",
+        "expected_unicode": "x³ - 2 x² + x",
+        "actual_unicode": "x³ - 2 x² + x",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -409,15 +1003,52 @@
           "error_type": null,
           "evidence": "对结果求导后恢复原被积函数",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "3 x^{2} - 4 x + 1",
+          "latex_after": "x^{3} - 2 x^{2} + x",
+          "unicode_before": "3 x² - 4 x + 1",
+          "unicode_after": "x³ - 2 x² + x",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：积分"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-16",
@@ -425,7 +1056,12 @@
         "status": "valid",
         "expected": "sin(x)",
         "actual": "sin(x)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\sin{\\left(x \\right)}",
+        "actual_latex": "\\sin{\\left(x \\right)}",
+        "expected_unicode": "sin{(x )}",
+        "actual_unicode": "sin{(x )}",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -434,15 +1070,52 @@
           "error_type": null,
           "evidence": "对结果求导后恢复原被积函数",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\cos{\\left(x \\right)}",
+          "latex_after": "\\sin{\\left(x \\right)}",
+          "unicode_before": "cos{(x )}",
+          "unicode_after": "sin{(x )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：积分"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-17",
@@ -450,7 +1123,12 @@
         "status": "valid",
         "expected": "exp(x)",
         "actual": "exp(x)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "e^{x}",
+        "actual_latex": "e^{x}",
+        "expected_unicode": "ex",
+        "actual_unicode": "ex",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -459,15 +1137,52 @@
           "error_type": null,
           "evidence": "对结果求导后恢复原被积函数",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "e^{x}",
+          "latex_after": "e^{x}",
+          "unicode_before": "ex",
+          "unicode_after": "ex",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：积分"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-18",
@@ -475,7 +1190,12 @@
         "status": "valid",
         "expected": "log(x)",
         "actual": "log(x)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\log{\\left(x \\right)}",
+        "actual_latex": "\\log{\\left(x \\right)}",
+        "expected_unicode": "log{(x )}",
+        "actual_unicode": "log{(x )}",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -484,15 +1204,52 @@
           "error_type": null,
           "evidence": "对结果求导后恢复原被积函数",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{1}{x}",
+          "latex_after": "\\log{\\left(x \\right)}",
+          "unicode_before": "(1)/(x)",
+          "unicode_after": "log{(x )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "valid",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "已出现："
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-19",
@@ -500,7 +1257,12 @@
         "status": "valid",
         "expected": "1/3",
         "actual": "1/3",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{3}",
+        "actual_latex": "\\frac{1}{3}",
+        "expected_unicode": "(1)/(3)",
+        "actual_unicode": "(1)/(3)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -509,15 +1271,52 @@
           "error_type": null,
           "evidence": "表达式保持等价",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x^{2}",
+          "latex_after": "x^{2}",
+          "unicode_before": "x²",
+          "unicode_after": "x²",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：积分"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "B-20",
@@ -525,7 +1324,12 @@
         "status": "valid",
         "expected": "2",
         "actual": "2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "2",
+        "actual_unicode": "2",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -534,15 +1338,52 @@
           "error_type": null,
           "evidence": "表达式保持等价",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\sin{\\left(x \\right)}",
+          "latex_after": "\\sin{\\left(x \\right)}",
+          "unicode_before": "sin{(x )}",
+          "unicode_after": "sin{(x )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：积分"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-01",
@@ -550,7 +1391,12 @@
         "status": "valid",
         "expected": "1/3",
         "actual": "1/3",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{3}",
+        "actual_latex": "\\frac{1}{3}",
+        "expected_unicode": "(1)/(3)",
+        "actual_unicode": "(1)/(3)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -559,15 +1405,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{- x + \\tan{\\left(x \\right)}}{x^{3}}",
+          "latex_after": "\\frac{1}{3}",
+          "unicode_before": "(- x + tan{(x )})/(x³)",
+          "unicode_after": "(1)/(3)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：泰勒"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-02",
@@ -575,7 +1458,12 @@
         "status": "valid",
         "expected": "1/2",
         "actual": "1/2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{2}",
+        "actual_latex": "\\frac{1}{2}",
+        "expected_unicode": "(1)/(2)",
+        "actual_unicode": "(1)/(2)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -584,15 +1472,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{- x + e^{x} - 1}{x^{2}}",
+          "latex_after": "\\frac{1}{2}",
+          "unicode_before": "(- x + ex - 1)/(x²)",
+          "unicode_after": "(1)/(2)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：泰勒"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-03",
@@ -600,7 +1525,12 @@
         "status": "valid",
         "expected": "1",
         "actual": "1",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "1",
+        "actual_unicode": "1",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -609,15 +1539,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{x}{x + e^{- x}}",
+          "latex_after": null,
+          "unicode_before": "(x)/(x + e⁻ x)",
+          "unicode_after": "1",
+          "formula_parse_status": "fallback"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "valid",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "已出现："
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-04",
@@ -625,7 +1592,12 @@
         "status": "valid",
         "expected": "1",
         "actual": "1",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "1",
+        "actual_unicode": "1",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -634,15 +1606,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{\\log{\\left(x + 1 \\right)}}{x}",
+          "latex_after": null,
+          "unicode_before": "(log{(x + 1 )})/(x)",
+          "unicode_after": "1",
+          "formula_parse_status": "fallback"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：无穷小、等价"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-05",
@@ -650,7 +1659,12 @@
         "status": "valid",
         "expected": "2",
         "actual": "2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "2",
+        "actual_unicode": "2",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -659,15 +1673,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{1 - \\cos{\\left(2 x \\right)}}{x^{2}}",
+          "latex_after": null,
+          "unicode_before": "(1 - cos{(2 x )})/(x²)",
+          "unicode_after": "2",
+          "formula_parse_status": "fallback"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：无穷小、等价"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-06",
@@ -675,7 +1726,12 @@
         "status": "valid",
         "expected": "3",
         "actual": "3",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "3",
+        "actual_unicode": "3",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -684,15 +1740,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{x^{3} - 1}{x - 1}",
+          "latex_after": null,
+          "unicode_before": "(x³ - 1)/(x - 1)",
+          "unicode_after": "3",
+          "formula_parse_status": "fallback"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：洛必达"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-07",
@@ -700,7 +1793,12 @@
         "status": "valid",
         "expected": "-1/8",
         "actual": "-1/8",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "- \\frac{1}{8}",
+        "actual_latex": "- \\frac{1}{8}",
+        "expected_unicode": "- (1)/(8)",
+        "actual_unicode": "- (1)/(8)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -709,15 +1807,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{- \\frac{x}{2} + \\sqrt{x + 1} - 1}{x^{2}}",
+          "latex_after": "- \\frac{1}{8}",
+          "unicode_before": "(- (x)/(2) + √(x + 1) - 1)/(x²)",
+          "unicode_after": "- (1)/(8)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：泰勒"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-08",
@@ -725,7 +1860,12 @@
         "status": "valid",
         "expected": "10*x*(x**2+1)**4",
         "actual": "10*x*(x**2+1)**4",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "10 x \\left(x^{2} + 1\\right)^{4}",
+        "actual_latex": "10 x \\left(x^{2} + 1\\right)^{4}",
+        "expected_unicode": "10 x (x² + 1)⁴",
+        "actual_unicode": "10 x (x² + 1)⁴",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -734,15 +1874,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\left(x^{2} + 1\\right)^{5}",
+          "latex_after": "10 x \\left(x^{2} + 1\\right)^{4}",
+          "unicode_before": "(x² + 1)⁵",
+          "unicode_after": "10 x (x² + 1)⁴",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：复合、链式"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-09",
@@ -750,7 +1927,12 @@
         "status": "valid",
         "expected": "x**x*(log(x)+1)",
         "actual": "x**x*(log(x)+1)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "x^{x} \\left(\\log{\\left(x \\right)} + 1\\right)",
+        "actual_latex": "x^{x} \\left(\\log{\\left(x \\right)} + 1\\right)",
+        "expected_unicode": "xx (log{(x )} + 1)",
+        "actual_unicode": "xx (log{(x )} + 1)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -759,15 +1941,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x^{x}",
+          "latex_after": "x^{x} \\left(\\log{\\left(x \\right)} + 1\\right)",
+          "unicode_before": "xx",
+          "unicode_after": "xx (log{(x )} + 1)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：对数、求导"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-10",
@@ -775,7 +1994,12 @@
         "status": "valid",
         "expected": "2*x/(1+x**4)",
         "actual": "2*x/(1+x**4)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{2 x}{x^{4} + 1}",
+        "actual_latex": "\\frac{2 x}{x^{4} + 1}",
+        "expected_unicode": "(2 x)/(x⁴ + 1)",
+        "actual_unicode": "(2 x)/(x⁴ + 1)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -784,15 +2008,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\operatorname{atan}{\\left(x^{2} \\right)}",
+          "latex_after": "\\frac{2 x}{x^{4} + 1}",
+          "unicode_before": "\\operatorname{atan}{(x² )}",
+          "unicode_after": "(2 x)/(x⁴ + 1)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：复合、链式"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-11",
@@ -800,7 +2061,12 @@
         "status": "valid",
         "expected": "-x/y",
         "actual": "-x/y",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "- \\frac{x}{y}",
+        "actual_latex": "- \\frac{x}{y}",
+        "expected_unicode": "- (x)/(y)",
+        "actual_unicode": "- (x)/(y)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -809,15 +2075,52 @@
           "error_type": null,
           "evidence": "隐函数求导公式与标准结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x^{2} + y^{2}",
+          "latex_after": "- \\frac{x}{y}",
+          "unicode_before": "x² + y²",
+          "unicode_after": "- (x)/(y)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：求导、隐函数"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-12",
@@ -825,7 +2128,12 @@
         "status": "valid",
         "expected": "sin(x)**x*(log(sin(x))+x*cos(x)/sin(x))",
         "actual": "sin(x)**x*(log(sin(x))+x*cos(x)/sin(x))",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\left(\\frac{x \\cos{\\left(x \\right)}}{\\sin{\\left(x \\right)}} + \\log{\\left(\\sin{\\left(x \\right)} \\right)}\\right) \\sin^{x}{\\left(x \\right)}",
+        "actual_latex": "\\left(\\frac{x \\cos{\\left(x \\right)}}{\\sin{\\left(x \\right)}} + \\log{\\left(\\sin{\\left(x \\right)} \\right)}\\right) \\sin^{x}{\\left(x \\right)}",
+        "expected_unicode": "((x cos{(x )})/(sin{(x )}) + log{(sin{(x )} )}) sinx{(x )}",
+        "actual_unicode": "((x cos{(x )})/(sin{(x )}) + log{(sin{(x )} )}) sinx{(x )}",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -834,15 +2142,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\sin^{x}{\\left(x \\right)}",
+          "latex_after": "\\left(\\frac{x \\cos{\\left(x \\right)}}{\\sin{\\left(x \\right)}} + \\log{\\left(\\sin{\\left(x \\right)} \\right)}\\right) \\sin^{x}{\\left(x \\right)}",
+          "unicode_before": "sinx{(x )}",
+          "unicode_after": "((x cos{(x )})/(sin{(x )}) + log{(sin{(x )} )}) sinx{(x )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：对数、求导"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-13",
@@ -850,7 +2195,12 @@
         "status": "valid",
         "expected": "x*exp(x)/(1+x)**2",
         "actual": "x*exp(x)/(1+x)**2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{x e^{x}}{\\left(x + 1\\right)^{2}}",
+        "actual_latex": "\\frac{x e^{x}}{\\left(x + 1\\right)^{2}}",
+        "expected_unicode": "(x ex)/((x + 1)²)",
+        "actual_unicode": "(x ex)/((x + 1)²)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -859,15 +2209,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{e^{x}}{x + 1}",
+          "latex_after": "\\frac{x e^{x}}{\\left(x + 1\\right)^{2}}",
+          "unicode_before": "(ex)/(x + 1)",
+          "unicode_after": "(x ex)/((x + 1)²)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：商法"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-14",
@@ -875,7 +2262,12 @@
         "status": "valid",
         "expected": "cos(x)/sin(x)",
         "actual": "cos(x)/sin(x)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{\\cos{\\left(x \\right)}}{\\sin{\\left(x \\right)}}",
+        "actual_latex": "\\frac{\\cos{\\left(x \\right)}}{\\sin{\\left(x \\right)}}",
+        "expected_unicode": "(cos{(x )})/(sin{(x )})",
+        "actual_unicode": "(cos{(x )})/(sin{(x )})",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -884,15 +2276,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\log{\\left(\\sin{\\left(x \\right)} \\right)}",
+          "latex_after": "\\frac{\\cos{\\left(x \\right)}}{\\sin{\\left(x \\right)}}",
+          "unicode_before": "log{(sin{(x )} )}",
+          "unicode_after": "(cos{(x )})/(sin{(x )})",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：复合、链式"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-15",
@@ -900,7 +2329,12 @@
         "status": "valid",
         "expected": "sin(x**2)",
         "actual": "sin(x**2)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\sin{\\left(x^{2} \\right)}",
+        "actual_latex": "\\sin{\\left(x^{2} \\right)}",
+        "expected_unicode": "sin{(x² )}",
+        "actual_unicode": "sin{(x² )}",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -909,15 +2343,52 @@
           "error_type": null,
           "evidence": "对结果求导后恢复原被积函数",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "2 x \\cos{\\left(x^{2} \\right)}",
+          "latex_after": "\\sin{\\left(x^{2} \\right)}",
+          "unicode_before": "2 x cos{(x² )}",
+          "unicode_after": "sin{(x² )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：换元"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-16",
@@ -925,7 +2396,12 @@
         "status": "valid",
         "expected": "(x-1)*exp(x)",
         "actual": "(x-1)*exp(x)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\left(x - 1\\right) e^{x}",
+        "actual_latex": "\\left(x - 1\\right) e^{x}",
+        "expected_unicode": "(x - 1) ex",
+        "actual_unicode": "(x - 1) ex",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -934,15 +2410,52 @@
           "error_type": null,
           "evidence": "对结果求导后恢复原被积函数",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x e^{x}",
+          "latex_after": "\\left(x - 1\\right) e^{x}",
+          "unicode_before": "x ex",
+          "unicode_after": "(x - 1) ex",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：分部积分"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-17",
@@ -950,7 +2463,12 @@
         "status": "valid",
         "expected": "log(1+x**2)/2",
         "actual": "log(1+x**2)/2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{\\log{\\left(x^{2} + 1 \\right)}}{2}",
+        "actual_latex": "\\frac{\\log{\\left(x^{2} + 1 \\right)}}{2}",
+        "expected_unicode": "(log{(x² + 1 )})/(2)",
+        "actual_unicode": "(log{(x² + 1 )})/(2)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -959,15 +2477,52 @@
           "error_type": null,
           "evidence": "对结果求导后恢复原被积函数",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{x}{x^{2} + 1}",
+          "latex_after": "\\frac{\\log{\\left(x^{2} + 1 \\right)}}{2}",
+          "unicode_before": "(x)/(x² + 1)",
+          "unicode_after": "(log{(x² + 1 )})/(2)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：换元"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-18",
@@ -975,7 +2530,12 @@
         "status": "valid",
         "expected": "-1/4",
         "actual": "-1/4",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "- \\frac{1}{4}",
+        "actual_latex": "- \\frac{1}{4}",
+        "expected_unicode": "- (1)/(4)",
+        "actual_unicode": "- (1)/(4)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -984,15 +2544,52 @@
           "error_type": null,
           "evidence": "表达式保持等价",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x \\log{\\left(x \\right)}",
+          "latex_after": "x \\log{\\left(x \\right)}",
+          "unicode_before": "x log{(x )}",
+          "unicode_after": "x log{(x )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：分部积分、反常、收敛"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-19",
@@ -1000,7 +2597,12 @@
         "status": "valid",
         "expected": "pi",
         "actual": "pi",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\pi",
+        "actual_latex": "\\pi",
+        "expected_unicode": "π",
+        "actual_unicode": "π",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1009,15 +2611,52 @@
           "error_type": null,
           "evidence": "表达式保持等价",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x \\sin{\\left(x \\right)}",
+          "latex_after": "x \\sin{\\left(x \\right)}",
+          "unicode_before": "x sin{(x )}",
+          "unicode_after": "x sin{(x )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：分部积分"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "I-20",
@@ -1025,7 +2664,12 @@
         "status": "valid",
         "expected": "pi/4",
         "actual": "pi/4",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{\\pi}{4}",
+        "actual_latex": "\\frac{\\pi}{4}",
+        "expected_unicode": "(π)/(4)",
+        "actual_unicode": "(π)/(4)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1034,15 +2678,52 @@
           "error_type": null,
           "evidence": "表达式保持等价",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{1}{x^{2} + 1}",
+          "latex_after": "\\frac{1}{x^{2} + 1}",
+          "unicode_before": "(1)/(x² + 1)",
+          "unicode_after": "(1)/(x² + 1)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/3",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "valid",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "已出现："
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-01",
@@ -1050,7 +2731,12 @@
         "status": "valid",
         "expected": "1/2",
         "actual": "1/2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{2}",
+        "actual_latex": "\\frac{1}{2}",
+        "expected_unicode": "(1)/(2)",
+        "actual_unicode": "(1)/(2)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1059,15 +2745,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "- \\frac{1}{e^{x} - 1} + \\frac{1}{x}",
+          "latex_after": "\\frac{1}{2}",
+          "unicode_before": "- (1)/(ex - 1) + (1)/(x)",
+          "unicode_after": "(1)/(2)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：泰勒、洛必达"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-02",
@@ -1075,7 +2798,12 @@
         "status": "valid",
         "expected": "1/120",
         "actual": "1/120",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{120}",
+        "actual_latex": "\\frac{1}{120}",
+        "expected_unicode": "(1)/(120)",
+        "actual_unicode": "(1)/(120)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1084,23 +2812,65 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{\\frac{x^{3}}{6} - x + \\sin{\\left(x \\right)}}{x^{5}}",
+          "latex_after": "\\frac{1}{120}",
+          "unicode_before": "((x³)/(6) - x + sin{(x )})/(x⁵)",
+          "unicode_after": "(1)/(120)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：泰勒"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-03",
       "final_answer": {
         "status": "valid",
-        "expected": "1/2",
-        "actual": "1/2",
-        "evidence": "符号化简后与标准答案等价"
+        "expected": "-1/8",
+        "actual": "-1/8",
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "- \\frac{1}{8}",
+        "actual_latex": "- \\frac{1}{8}",
+        "expected_unicode": "- (1)/(8)",
+        "actual_unicode": "- (1)/(8)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1109,15 +2879,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x^{3} \\left(- x + \\sqrt{x^{2} + 1} - \\frac{1}{2 x}\\right)",
+          "latex_after": "- \\frac{1}{8}",
+          "unicode_before": "x³ (- x + √{x² + 1} - (1)/(2 x))",
+          "unicode_after": "- (1)/(8)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：有理化、泰勒"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-04",
@@ -1125,7 +2932,12 @@
         "status": "valid",
         "expected": "1/3",
         "actual": "1/3",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{3}",
+        "actual_latex": "\\frac{1}{3}",
+        "expected_unicode": "(1)/(3)",
+        "actual_unicode": "(1)/(3)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1134,23 +2946,65 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{\\frac{x^{2}}{2} - x + \\log{\\left(x + 1 \\right)}}{x^{3}}",
+          "latex_after": "\\frac{1}{3}",
+          "unicode_before": "((x²)/(2) - x + log{(x + 1 )})/(x³)",
+          "unicode_after": "(1)/(3)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：泰勒"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-05",
       "final_answer": {
         "status": "valid",
-        "expected": "E",
-        "actual": "E",
-        "evidence": "符号化简后与标准答案等价"
+        "expected": "exp(p)",
+        "actual": "exp(p)",
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "e^{p}",
+        "actual_latex": "e^{p}",
+        "expected_unicode": "ep",
+        "actual_unicode": "ep",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1159,15 +3013,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\left(p x + 1\\right)^{\\frac{1}{x}}",
+          "latex_after": "e^{p}",
+          "unicode_before": "(p x + 1)⁽¹⁾/⁽x⁾",
+          "unicode_after": "ep",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：参数、对称、极限"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-06",
@@ -1175,7 +3066,12 @@
         "status": "valid",
         "expected": "exp(-1/2)",
         "actual": "exp(-1/2)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "e^{- \\frac{1}{2}}",
+        "actual_latex": "e^{- \\frac{1}{2}}",
+        "expected_unicode": "e⁻ ⁽¹⁾/⁽²⁾",
+        "actual_unicode": "e⁻ ⁽¹⁾/⁽²⁾",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1184,15 +3080,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\cos^{\\frac{1}{x^{2}}}{\\left(x \\right)}",
+          "latex_after": "e^{- \\frac{1}{2}}",
+          "unicode_before": "cos^{(1)/(x²)}{(x )}",
+          "unicode_after": "e⁻ ⁽¹⁾/⁽²⁾",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：极限"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-07",
@@ -1200,7 +3133,12 @@
         "status": "valid",
         "expected": "1/3",
         "actual": "1/3",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{1}{3}",
+        "actual_latex": "\\frac{1}{3}",
+        "expected_unicode": "(1)/(3)",
+        "actual_unicode": "(1)/(3)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1209,15 +3147,52 @@
           "error_type": null,
           "evidence": "左右极限与变形结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{- 2 x + e^{x} - e^{- x}}{x^{3}}",
+          "latex_after": "\\frac{1}{3}",
+          "unicode_before": "(- 2 x + ex - e⁻ x)/(x³)",
+          "unicode_after": "(1)/(3)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：泰勒"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-08",
@@ -1225,7 +3200,12 @@
         "status": "valid",
         "expected": "x**sin(x)*(cos(x)*log(x)+sin(x)/x)",
         "actual": "x**sin(x)*(cos(x)*log(x)+sin(x)/x)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "x^{\\sin{\\left(x \\right)}} \\left(\\log{\\left(x \\right)} \\cos{\\left(x \\right)} + \\frac{\\sin{\\left(x \\right)}}{x}\\right)",
+        "actual_latex": "x^{\\sin{\\left(x \\right)}} \\left(\\log{\\left(x \\right)} \\cos{\\left(x \\right)} + \\frac{\\sin{\\left(x \\right)}}{x}\\right)",
+        "expected_unicode": "x^{sin{(x )}} (log{(x )} cos{(x )} + (sin{(x )})/(x))",
+        "actual_unicode": "x^{sin{(x )}} (log{(x )} cos{(x )} + (sin{(x )})/(x))",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1234,15 +3214,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x^{\\sin{\\left(x \\right)}}",
+          "latex_after": "x^{\\sin{\\left(x \\right)}} \\left(\\log{\\left(x \\right)} \\cos{\\left(x \\right)} + \\frac{\\sin{\\left(x \\right)}}{x}\\right)",
+          "unicode_before": "x^{sin{(x )}}",
+          "unicode_after": "x^{sin{(x )}} (log{(x )} cos{(x )} + (sin{(x )})/(x))",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：对数、求导"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-09",
@@ -1250,7 +3267,12 @@
         "status": "valid",
         "expected": "-y/(x+cos(y))",
         "actual": "-y/(x+cos(y))",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "- \\frac{y}{x + \\cos{\\left(y \\right)}}",
+        "actual_latex": "- \\frac{y}{x + \\cos{\\left(y \\right)}}",
+        "expected_unicode": "- (y)/(x + cos{(y )})",
+        "actual_unicode": "- (y)/(x + cos{(y )})",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1259,15 +3281,52 @@
           "error_type": null,
           "evidence": "隐函数求导公式与标准结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x y + \\sin{\\left(y \\right)}",
+          "latex_after": "- \\frac{y}{x + \\cos{\\left(y \\right)}}",
+          "unicode_before": "x y + sin{(y )}",
+          "unicode_after": "- (y)/(x + cos{(y )})",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：求导、隐函数"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-10",
@@ -1275,7 +3334,12 @@
         "status": "valid",
         "expected": "2*x/sqrt(1+x**4)",
         "actual": "2*x/sqrt(1+x**4)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{2 x}{\\sqrt{x^{4} + 1}}",
+        "actual_latex": "\\frac{2 x}{\\sqrt{x^{4} + 1}}",
+        "expected_unicode": "(2 x)/(√{x⁴ + 1})",
+        "actual_unicode": "(2 x)/(√{x⁴ + 1})",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1284,15 +3348,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\log{\\left(x^{2} + \\sqrt{x^{4} + 1} \\right)}",
+          "latex_after": "\\frac{2 x}{\\sqrt{x^{4} + 1}}",
+          "unicode_before": "log{(x² + √{x⁴ + 1} )}",
+          "unicode_after": "(2 x)/(√{x⁴ + 1})",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：复合、求导、链式"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-11",
@@ -1300,7 +3401,12 @@
         "status": "valid",
         "expected": "1",
         "actual": "1",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "1",
+        "actual_unicode": "1",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -1309,15 +3415,52 @@
           "error_type": null,
           "evidence": "参数方程 dy/dx=(dy/dt)/(dx/dt)与标准结果一致",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{t^{3} - t}{t^{2} + 1}",
+          "latex_after": null,
+          "unicode_before": "(t³ - t)/(t² + 1)",
+          "unicode_after": "1",
+          "formula_parse_status": "fallback"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：dy/dx、参数"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-12",
@@ -1325,7 +3468,12 @@
         "status": "valid",
         "expected": "在 x=0 不可导",
         "actual": "在 x=0 不可导",
-        "evidence": "文字型标准答案匹配"
+        "evidence": "文字型标准答案匹配",
+        "expected_latex": "在 x = 0",
+        "actual_latex": "在 x = 0",
+        "expected_unicode": "在 x = 0",
+        "actual_unicode": "在 x = 0",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1334,15 +3482,52 @@
           "error_type": null,
           "evidence": "该题结论属于定义/性质判断，由最终结论与条件说明共同核验",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\left|{x}\\right|",
+          "latex_after": "\\left|{x}\\right|",
+          "unicode_before": "|{x}|",
+          "unicode_after": "|{x}|",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：不可导、左右导数"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-13",
@@ -1350,7 +3535,12 @@
         "status": "valid",
         "expected": "x/(1-x**2)**(3/2)",
         "actual": "x/(1-x**2)**(3/2)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\frac{x}{\\left(1 - x^{2}\\right)^{\\frac{3}{2}}}",
+        "actual_latex": "\\frac{x}{\\left(1 - x^{2}\\right)^{\\frac{3}{2}}}",
+        "expected_unicode": "(x)/((1 - x²)⁽³⁾/⁽²⁾)",
+        "actual_unicode": "(x)/((1 - x²)⁽³⁾/⁽²⁾)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1359,15 +3549,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\operatorname{asin}{\\left(x \\right)}",
+          "latex_after": "\\frac{x}{\\left(1 - x^{2}\\right)^{\\frac{3}{2}}}",
+          "unicode_before": "\\operatorname{asin}{(x )}",
+          "unicode_after": "(x)/((1 - x²)⁽³⁾/⁽²⁾)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：二阶、导数、高阶"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-14",
@@ -1375,7 +3602,12 @@
         "status": "valid",
         "expected": "2*log(x)+3",
         "actual": "2*log(x)+3",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "2 \\log{\\left(x \\right)} + 3",
+        "actual_latex": "2 \\log{\\left(x \\right)} + 3",
+        "expected_unicode": "2 log{(x )} + 3",
+        "actual_unicode": "2 log{(x )} + 3",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1384,15 +3616,52 @@
           "error_type": null,
           "evidence": "导数恒等式验证通过",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x^{2} \\log{\\left(x \\right)}",
+          "latex_after": "2 \\log{\\left(x \\right)} + 3",
+          "unicode_before": "x² log{(x )}",
+          "unicode_after": "2 log{(x )} + 3",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：二阶、导数、高阶"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "valid",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案可在步骤结果中找到。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-15",
@@ -1400,7 +3669,12 @@
         "status": "valid",
         "expected": "x*log(x)-x",
         "actual": "x*log(x)-x",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "x \\log{\\left(x \\right)} - x",
+        "actual_latex": "x \\log{\\left(x \\right)} - x",
+        "expected_unicode": "x log{(x )} - x",
+        "actual_unicode": "x log{(x )} - x",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1409,15 +3683,52 @@
           "error_type": null,
           "evidence": "表达式保持等价",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\log{\\left(x \\right)}",
+          "latex_after": "\\log{\\left(x \\right)}",
+          "unicode_before": "log{(x )}",
+          "unicode_after": "log{(x )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：分部积分"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-16",
@@ -1425,7 +3736,12 @@
         "status": "valid",
         "expected": "(x**2-2*x+2)*exp(x)",
         "actual": "(x**2-2*x+2)*exp(x)",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "\\left(x^{2} - 2 x + 2\\right) e^{x}",
+        "actual_latex": "\\left(x^{2} - 2 x + 2\\right) e^{x}",
+        "expected_unicode": "(x² - 2 x + 2) ex",
+        "actual_unicode": "(x² - 2 x + 2) ex",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1434,40 +3750,119 @@
           "error_type": null,
           "evidence": "表达式保持等价",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x^{2} e^{x}",
+          "latex_after": "x^{2} e^{x}",
+          "unicode_before": "x² ex",
+          "unicode_after": "x² ex",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：分部积分"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-17",
       "final_answer": {
         "status": "valid",
-        "expected": "1/(p-1)",
-        "actual": "1/(p-1)",
-        "evidence": "符号化简后与标准答案等价"
+        "expected": "p>1 时收敛，积分值为 1/(p-1)",
+        "actual": "p>1 时收敛，积分值为 1/(p-1)",
+        "evidence": "文字型标准答案匹配",
+        "expected_latex": "p > \\frac{为 值 分 收 敛 时 积 ，}{p - 1}",
+        "actual_latex": "p > \\frac{为 值 分 收 敛 时 积 ，}{p - 1}",
+        "expected_unicode": "p > (为 值 分 收 敛 时 积 ，)/(p - 1)",
+        "actual_unicode": "p > (为 值 分 收 敛 时 积 ，)/(p - 1)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
           "number": 1,
           "status": "valid",
           "error_type": null,
-          "evidence": "表达式保持等价",
+          "evidence": "该题结论属于定义/性质判断，由最终结论与条件说明共同核验",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "x^{- p}",
+          "latex_after": "x^{- p}",
+          "unicode_before": "x⁻ p",
+          "unicode_after": "x⁻ p",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：反常、收敛"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-18",
@@ -1475,7 +3870,12 @@
         "status": "valid",
         "expected": "1",
         "actual": "1",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": null,
+        "actual_latex": null,
+        "expected_unicode": "1",
+        "actual_unicode": "1",
+        "formula_parse_status": "fallback"
       },
       "steps": [
         {
@@ -1484,15 +3884,52 @@
           "error_type": null,
           "evidence": "表达式保持等价",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "e^{- x}",
+          "latex_after": "e^{- x}",
+          "unicode_before": "e⁻ x",
+          "unicode_after": "e⁻ x",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：反常、收敛"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-19",
@@ -1500,7 +3937,12 @@
         "status": "valid",
         "expected": "-pi**2/12",
         "actual": "-pi**2/12",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "- \\frac{\\pi^{2}}{12}",
+        "actual_latex": "- \\frac{\\pi^{2}}{12}",
+        "expected_unicode": "- (π²)/(12)",
+        "actual_unicode": "- (π²)/(12)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1509,15 +3951,52 @@
           "error_type": null,
           "evidence": "表达式保持等价",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\frac{\\log{\\left(x \\right)}}{x + 1}",
+          "latex_after": "\\frac{\\log{\\left(x \\right)}}{x + 1}",
+          "unicode_before": "(log{(x )})/(x + 1)",
+          "unicode_after": "(log{(x )})/(x + 1)",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：反常、收敛、级数"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     },
     {
       "problem_id": "A-20",
@@ -1525,7 +4004,12 @@
         "status": "valid",
         "expected": "-pi*log(2)/2",
         "actual": "-pi*log(2)/2",
-        "evidence": "符号化简后与标准答案等价"
+        "evidence": "符号化简后与标准答案等价",
+        "expected_latex": "- \\frac{\\pi \\log{\\left(2 \\right)}}{2}",
+        "actual_latex": "- \\frac{\\pi \\log{\\left(2 \\right)}}{2}",
+        "expected_unicode": "- (π log{(2 )})/(2)",
+        "actual_unicode": "- (π log{(2 )})/(2)",
+        "formula_parse_status": "parsed"
       },
       "steps": [
         {
@@ -1534,15 +4018,1670 @@
           "error_type": null,
           "evidence": "表达式保持等价",
           "affected": false,
-          "llm_review": null
+          "llm_review": null,
+          "issues": [],
+          "latex_before": "\\log{\\left(\\sin{\\left(x \\right)} \\right)}",
+          "latex_after": "\\log{\\left(\\sin{\\left(x \\right)} \\right)}",
+          "unicode_before": "log{(sin{(x )} )}",
+          "unicode_after": "log{(sin{(x )} )}",
+          "formula_parse_status": "parsed"
         }
       ],
       "process_correct": true,
       "first_error_step": null,
+      "first_review_step": null,
+      "review_status": "verified",
       "error_types": [],
       "answer_correct_but_process_invalid": false,
+      "process_summary": {
+        "status": "verified",
+        "first_error_step": null,
+        "first_review_step": null,
+        "primary_error_type": null,
+        "error_types": [],
+        "explanation": "未发现确定性错误，过程通过自动校验。"
+      },
       "api_failed": false,
-      "metadata": {}
+      "metadata": {},
+      "rule_checks": [
+        {
+          "code": "step_count",
+          "status": "uncertain",
+          "message": "步骤数量 1/5",
+          "evidence": "步骤较少，可能存在跳步，建议结合 Hy3 评审复核。"
+        },
+        {
+          "code": "key_formula_keywords",
+          "status": "uncertain",
+          "message": "关键方法/公式关键词检查",
+          "evidence": "缺少：参数、反常、对称、收敛"
+        },
+        {
+          "code": "final_answer_derivation",
+          "status": "uncertain",
+          "message": "最终答案是否在步骤中自然出现",
+          "evidence": "最终答案未在步骤结果中明确出现，建议复核是否存在跳步。"
+        }
+      ],
+      "llm_judge": null
     }
-  ]
+  ],
+  "validation_total": 60,
+  "validation_process_issue_detection_rate": 1.0,
+  "validation_first_error_detection_rate": 1.0,
+  "validation_first_error_localization_accuracy": 1.0,
+  "validation_false_positive_rate": 0.0,
+  "validation_wrong_answer_total": 20,
+  "validation_wrong_answer_detected_count": 20,
+  "validation_wrong_answer_localized_count": 20,
+  "validation_correct_total": 20,
+  "validation_correct_flagged_count": 0,
+  "validation_correct_true_problem_count": 0,
+  "validation_false_positive_count": 0,
+  "validation_false_positive_share": null,
+  "validation_answer_correct_total": 40,
+  "validation_answer_correct_flagged_count": 20,
+  "validation_answer_correct_true_problem_count": 20,
+  "validation_answer_correct_false_positive_count": 0,
+  "validation_answer_correct_precision": 1.0,
+  "validation_answer_correct_false_positive_rate": 0.0,
+  "validation_answer_correct_false_positive_share": 0.0,
+  "validation_true_problem_rate": 0.6666666666666666,
+  "validation_answer_correct_process_invalid_rate": 1.0,
+  "validation_by_kind": {
+    "correct": {
+      "count": 20.0,
+      "process_issue_detection_rate": 0.0,
+      "first_error_localization_accuracy": 0.0,
+      "false_positive_rate": 0.0
+    },
+    "correct_answer_wrong_process": {
+      "count": 20.0,
+      "process_issue_detection_rate": 1.0,
+      "first_error_localization_accuracy": 0.0,
+      "false_positive_rate": 0.0
+    },
+    "wrong_answer": {
+      "count": 20.0,
+      "process_issue_detection_rate": 1.0,
+      "first_error_localization_accuracy": 1.0,
+      "false_positive_rate": 0.0
+    }
+  },
+  "validation_by_difficulty": {
+    "basic": {
+      "count": 20.0,
+      "process_accuracy": 1.0,
+      "final_answer_accuracy": 1.0
+    },
+    "intermediate": {
+      "count": 20.0,
+      "process_accuracy": 0.0,
+      "final_answer_accuracy": 0.0
+    },
+    "advanced": {
+      "count": 20.0,
+      "process_accuracy": 0.0,
+      "final_answer_accuracy": 1.0
+    }
+  },
+  "validation_error_type_distribution": {
+    "计算错误": 37,
+    "循环论证": 13,
+    "跳步推导": 2
+  },
+  "validation_results": [
+    {
+      "problem_id": "B-01",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "limit",
+      "standard_answer": "1",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-02",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "limit",
+      "standard_answer": "1/2",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-03",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "limit",
+      "standard_answer": "4",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-04",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "limit",
+      "standard_answer": "3",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-05",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "limit",
+      "standard_answer": "1",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-06",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "limit",
+      "standard_answer": "1",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-07",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "limit",
+      "standard_answer": "1/2",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-08",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "derivative",
+      "standard_answer": "3*x**2-2",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-09",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "derivative",
+      "standard_answer": "cos(x)+exp(x)",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-10",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "derivative",
+      "standard_answer": "1/x",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-11",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "derivative",
+      "standard_answer": "1/(2*sqrt(x))",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-12",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "derivative",
+      "standard_answer": "sin(x)+x*cos(x)",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-13",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "derivative",
+      "standard_answer": "2*x*cos(x**2)",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-14",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "derivative",
+      "standard_answer": "-1/(x+1)**2",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-15",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "integral",
+      "standard_answer": "x**3-2*x**2+x",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-16",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "integral",
+      "standard_answer": "sin(x)",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-17",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "integral",
+      "standard_answer": "exp(x)",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-18",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "integral",
+      "standard_answer": "log(x)",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-19",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "integral",
+      "standard_answer": "1/3",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "B-20",
+      "kind": "correct",
+      "difficulty": "basic",
+      "category": "integral",
+      "standard_answer": "2",
+      "expected_first_error_step": null,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": null,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": null,
+      "first_error_detected": false,
+      "first_error_localized": false,
+      "expected_error_types": [],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": true,
+      "process_correct_predicted": true,
+      "human_review": "未发现问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-01",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "limit",
+      "standard_answer": "1/3",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-02",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "limit",
+      "standard_answer": "1/2",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-03",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "limit",
+      "standard_answer": "1",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 4,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 4,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-04",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "limit",
+      "standard_answer": "1",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-05",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "limit",
+      "standard_answer": "2",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-06",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "limit",
+      "standard_answer": "3",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 4,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 4,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-07",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "limit",
+      "standard_answer": "-1/8",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-08",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "derivative",
+      "standard_answer": "10*x*(x**2+1)**4",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-09",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "derivative",
+      "standard_answer": "x**x*(log(x)+1)",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 4,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 4,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-10",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "derivative",
+      "standard_answer": "2*x/(1+x**4)",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-11",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "derivative",
+      "standard_answer": "-x/y",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-12",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "derivative",
+      "standard_answer": "sin(x)**x*(log(sin(x))+x*cos(x)/sin(x))",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 4,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 4,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-13",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "derivative",
+      "standard_answer": "x*exp(x)/(1+x)**2",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-14",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "derivative",
+      "standard_answer": "cos(x)/sin(x)",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-15",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "integral",
+      "standard_answer": "sin(x**2)",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 4,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 4,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-16",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "integral",
+      "standard_answer": "(x-1)*exp(x)",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-17",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "integral",
+      "standard_answer": "log(1+x**2)/2",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-18",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "integral",
+      "standard_answer": "-1/4",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 4,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 4,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-19",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "integral",
+      "standard_answer": "pi",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "I-20",
+      "kind": "wrong_answer",
+      "difficulty": "intermediate",
+      "category": "integral",
+      "standard_answer": "pi/4",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "计算错误"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "invalid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": false
+    },
+    {
+      "problem_id": "A-01",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "limit",
+      "standard_answer": "1/2",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-02",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "limit",
+      "standard_answer": "1/120",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-03",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "limit",
+      "standard_answer": "-1/8",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 4,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 4,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-04",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "limit",
+      "standard_answer": "1/3",
+      "expected_first_error_step": 5,
+      "predicted_first_error_step": 5,
+      "actual_first_error_step": 5,
+      "predicted_deterministic_error_step": 5,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 5,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-05",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "limit",
+      "standard_answer": "exp(p)",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-06",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "limit",
+      "standard_answer": "exp(-1/2)",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-07",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "limit",
+      "standard_answer": "1/3",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 4,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 4,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-08",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "derivative",
+      "standard_answer": "x**sin(x)*(cos(x)*log(x)+sin(x)/x)",
+      "expected_first_error_step": 5,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": 5,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": 4,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": false,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-09",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "derivative",
+      "standard_answer": "-y/(x+cos(y))",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-10",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "derivative",
+      "standard_answer": "2*x/sqrt(1+x**4)",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-11",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "derivative",
+      "standard_answer": "1",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 4,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 4,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-12",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "derivative",
+      "standard_answer": "在 x=0 不可导",
+      "expected_first_error_step": 5,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": 5,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": false,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "循环论证",
+        "跳步推导"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-13",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "derivative",
+      "standard_answer": "x/(1-x**2)**(3/2)",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": 2,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": 2,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-14",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "derivative",
+      "standard_answer": "2*log(x)+3",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-15",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "integral",
+      "standard_answer": "x*log(x)-x",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 4,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 4,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 4,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-16",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "integral",
+      "standard_answer": "(x**2-2*x+2)*exp(x)",
+      "expected_first_error_step": 5,
+      "predicted_first_error_step": 5,
+      "actual_first_error_step": 5,
+      "predicted_deterministic_error_step": 5,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 5,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-17",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "integral",
+      "standard_answer": "p>1 时收敛，积分值为 1/(p-1)",
+      "expected_first_error_step": 2,
+      "predicted_first_error_step": null,
+      "actual_first_error_step": 2,
+      "predicted_deterministic_error_step": null,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 2,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "跳步推导"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-18",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "integral",
+      "standard_answer": "1",
+      "expected_first_error_step": 3,
+      "predicted_first_error_step": 3,
+      "actual_first_error_step": 3,
+      "predicted_deterministic_error_step": 3,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 3,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-19",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "integral",
+      "standard_answer": "-pi**2/12",
+      "expected_first_error_step": 4,
+      "predicted_first_error_step": 1,
+      "actual_first_error_step": 4,
+      "predicted_deterministic_error_step": 1,
+      "predicted_first_review_step": 2,
+      "predicted_issue_step": 1,
+      "first_error_detected": true,
+      "first_error_localized": false,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误",
+        "循环论证"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    },
+    {
+      "problem_id": "A-20",
+      "kind": "correct_answer_wrong_process",
+      "difficulty": "advanced",
+      "category": "integral",
+      "standard_answer": "-pi*log(2)/2",
+      "expected_first_error_step": 5,
+      "predicted_first_error_step": 5,
+      "actual_first_error_step": 5,
+      "predicted_deterministic_error_step": 5,
+      "predicted_first_review_step": null,
+      "predicted_issue_step": 5,
+      "first_error_detected": true,
+      "first_error_localized": true,
+      "expected_error_types": [
+        "跳步推导"
+      ],
+      "predicted_error_types": [
+        "计算错误"
+      ],
+      "final_answer_status": "valid",
+      "process_correct_expected": false,
+      "process_correct_predicted": false,
+      "human_review": "真实问题",
+      "false_positive": false,
+      "answer_correct_but_process_invalid": true
+    }
+  ],
+  "performance_decline_layer": null
 }

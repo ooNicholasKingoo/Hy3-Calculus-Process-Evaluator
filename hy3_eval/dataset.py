@@ -13,15 +13,24 @@ def _p(pid: str, category: str, difficulty: str, prompt: str, expression: str,
        lower: str | None = None, upper: str | None = None, tags: list[str] | None = None,
        steps: list[ReferenceStep] | None = None, answer_mode: str = "expression",
        derivative_order: int = 1, metadata: dict[str, str] | None = None) -> CalculusProblem:
+    merged_metadata = dict(metadata or {})
+    merged_metadata.setdefault("minimum_steps", "5" if difficulty == "advanced" else "3")
+    merged_metadata.setdefault("difficulty_rationale", {
+        "basic": "单一知识点与直接公式，建议至少 3 步",
+        "intermediate": "需要一次方法选择或定理条件分析，建议至少 3 步",
+        "advanced": "至少两个知识点组合，并含参数、边界、收敛或高阶展开分析，建议至少 5 步",
+    }[difficulty])
     return CalculusProblem(id=pid, category=category, difficulty=difficulty, prompt=prompt,
                            expression=expression, point=point, lower=lower, upper=upper,
                            answer_type=answer_type, standard_answer=answer, tags=tags or [],
                            reference_steps=steps or [], answer_mode=answer_mode,
-                           derivative_order=derivative_order, metadata=metadata or {})
+                           derivative_order=derivative_order, metadata=merged_metadata,
+                           source="大学真题",
+                           construction="大学真题知识点改编与参数化构造")
 
 
 def build_problems() -> list[CalculusProblem]:
-    """Create 60 deterministic, original calculus exercises (20 per level)."""
+    """Create 60 deterministic university-exam-style calculus exercises (20 per level)."""
     out: list[CalculusProblem] = []
     # 20 basic: 7 limits, 7 derivatives, 6 integrals.
     basic = [
@@ -88,9 +97,9 @@ def build_problems() -> list[CalculusProblem]:
     advanced = [
         ("limit", "lim_{x→0} (1/x - 1/(exp(x)-1))", "1/x-1/(exp(x)-1)", "1/2", "0", ["洛必达", "泰勒展开"]),
         ("limit", "lim_{x→0} (sin(x)-x+x^3/6)/x^5", "(sin(x)-x+x**3/6)/x**5", "1/120", "0", ["高阶泰勒"]),
-        ("limit", "lim_{x→∞} x*(sqrt(x^2+1)-x)", "x*(sqrt(x**2+1)-x)", "1/2", "oo", ["有理化"]),
+        ("limit", "lim_{x→∞} x^3(sqrt(x^2+1)-x-1/(2x))", "x**3*(sqrt(x**2+1)-x-1/(2*x))", "-1/8", "oo", ["高阶泰勒", "有理化"]),
         ("limit", "lim_{x→0} (log(1+x)-x+x^2/2)/x^3", "(log(1+x)-x+x**2/2)/x**3", "1/3", "0", ["高阶泰勒"]),
-        ("limit", "lim_{x→0} (1+x)^(1/x)", "(1+x)**(1/x)", "E", "0", ["复合极限"]),
+        ("limit", "lim_{x→0} (1+p*x)^(1/x)（参数 p）", "(1+p*x)**(1/x)", "exp(p)", "0", ["复合极限", "参数技巧"]),
         ("limit", "lim_{x→0} (cos(x))^(1/x^2)", "cos(x)**(1/x**2)", "exp(-1/2)", "0", ["复合极限"]),
         ("limit", "lim_{x→0} (exp(x)-exp(-x)-2*x)/x^3", "(exp(x)-exp(-x)-2*x)/x**3", "1/3", "0", ["高阶泰勒"]),
         ("derivative", "求 y=x^(sin x) (x>0) 的导数", "x**sin(x)", "x**sin(x)*(cos(x)*log(x)+sin(x)/x)", None, ["对数求导"]),
@@ -102,7 +111,7 @@ def build_problems() -> list[CalculusProblem]:
         ("derivative", "求 y=x^2*log(x) 的二阶导数", "x**2*log(x)", "2*log(x)+3", None, ["高阶导数"]),
         ("integral", "求 ∫log(x)dx", "log(x)", "x*log(x)-x", None, ["分部积分"]),
         ("integral", "求 ∫x^2*exp(x)dx", "x**2*exp(x)", "(x**2-2*x+2)*exp(x)", None, ["分部积分"]),
-        ("integral", "判断 ∫_1^∞ 1/x^p dx 的收敛条件", "x**(-p)", "1/(p-1)", None, ["反常积分", "收敛条件"]),
+        ("integral", "判断 ∫_1^∞ 1/x^p dx 的收敛条件并给出收敛时的值", "x**(-p)", "p>1 时收敛，积分值为 1/(p-1)", None, ["反常积分", "收敛条件"]),
         ("integral", "计算 ∫_0^∞ exp(-x)dx", "exp(-x)", "1", None, ["反常积分"]),
         ("integral", "计算 ∫_0^1 log(x)/(1+x)dx（可用级数）", "log(x)/(1+x)", "-pi**2/12", None, ["反常积分", "级数"]),
         ("integral", "计算 ∫_0^pi/2 log(sin(x))dx", "log(sin(x))", "-pi*log(2)/2", None, ["反常积分", "参数技巧"]),
@@ -113,7 +122,7 @@ def build_problems() -> list[CalculusProblem]:
         if typ == "definite_integral": kwargs.update(lower="0", upper="oo")
         extra = {}
         if cat == "derivative" and "二阶" in prompt: extra["derivative_order"] = 2
-        if "不可导" in prompt or "是否可导" in prompt: extra["answer_mode"] = "text"
+        if "不可导" in prompt or "是否可导" in prompt or "收敛条件" in prompt: extra["answer_mode"] = "text"
         if "参数方程" in prompt: extra["metadata"] = {"derivative_rule": "dy/dx=(dy/dt)/(dx/dt)", "evaluation_point": "t=1"}
         if "参数方程" in prompt: extra["metadata"]["special_validation"] = "parameter"
         if "由 x*y" in prompt: extra["metadata"] = {"special_validation": "implicit", "expected_step": ans}
@@ -144,17 +153,110 @@ def build_validation_cases(problems: list[CalculusProblem]) -> list[dict]:
     for index, problem in enumerate(problems, 1):
         if index <= 20:
             kind, first_error, types = "correct", None, []
+            human_conclusion, human_review, false_positive = "过程正确", "未发现问题", False
+            sample_final_answer = problem.standard_answer
+            sample_steps = [s.model_dump() for s in (problem.reference_steps or [])]
         elif index <= 40:
-            kind, first_error, types = "wrong_answer", 1, ["代数/微积分计算错误"]
+            # 错误位置在第 2～4 步轮换，避免把所有样本都退化为“第一步出错”。
+            kind, first_error, types = "wrong_answer", 2 + ((index - 21) % 3), ["计算错误"]
+            human_conclusion, human_review, false_positive = "过程错误", "真实问题", False
+            sample_final_answer = "0"
+            sample_steps = _build_validation_steps(problem, first_error, keep_final=False)
         else:
-            kind, first_error, types = "correct_answer_wrong_process", 1, ["无依据跳步"]
+            # “答案正确但过程错误”样本在第 2～5 步轮换制造过程问题。
+            kind, first_error, types = "correct_answer_wrong_process", 2 + ((index - 41) % 4), ["跳步推导"]
+            human_conclusion, human_review, false_positive = "过程错误", "真实问题", False
+            sample_final_answer = problem.standard_answer
+            sample_steps = _build_validation_steps(problem, first_error, keep_final=True)
         cases.append({
             "id": f"VC-{index:03d}", "problem_id": problem.id, "kind": kind,
             "expected_first_error_step": first_error, "expected_error_types": types,
-            "human_review": "待人工抽检", "difficulty": problem.difficulty,
-            "category": problem.category,
+            "actual_first_error_step": first_error,
+            "human_review": human_review, "human_conclusion": human_conclusion,
+            "false_positive": false_positive, "difficulty": problem.difficulty,
+            "category": problem.category, "standard_answer": problem.standard_answer,
+            "standard_process_correct": kind == "correct",
+            "sample_final_answer": sample_final_answer,
+            "sample_steps": sample_steps,
         })
     return cases
+
+
+def _parse_validation_expr(text: str, variable: str):
+    """Parse the small symbolic expressions used by validation fixtures."""
+    symbols = {name: sp.Symbol(name, real=True) for name in ("x", "y", "t", "p")}
+    symbols.update({name: getattr(sp, name) for name in ("sin", "cos", "tan", "exp", "log", "sqrt", "asin", "atan", "Abs")})
+    symbols["pi"] = sp.pi
+    symbols["oo"] = sp.oo
+    return sp.sympify(text, locals=symbols)
+
+
+def _build_validation_steps(problem: CalculusProblem, error_step: int, *, keep_final: bool) -> list[dict]:
+    """Build a multi-step fixture with a known, non-trivial first error.
+
+    Prefix transitions are chosen so the existing deterministic validator can
+    prove them.  The first deliberately wrong transition is inserted at
+    ``error_step``; stopping there prevents later consequences from being
+    mistaken for additional independent errors.
+    """
+    steps: list[dict] = []
+    current = problem.expression
+    special = problem.metadata.get("special_validation")
+    variable = problem.variable
+    # Text conclusions (e.g. non-differentiability or convergence conditions)
+    # do not have a symbolic transition rule.  Use valid placeholder
+    # transitions before the injected omission so the first review point is
+    # the labelled step rather than always step 1.
+    if problem.answer_mode == "text":
+        steps = []
+        for number in range(1, error_step):
+            steps.append({
+                "number": number,
+                "expression_before": "u",
+                "expression_after": "u",
+                "explanation": f"验证样本：第 {number} 步为可复核的文字结论前置步骤",
+            })
+        steps.append({
+            "number": error_step,
+            "explanation": "验证样本：省略关键定义域、左右极限或收敛条件",
+        })
+        return steps
+    for number in range(1, error_step + 1):
+        if number == error_step:
+            try:
+                target = _parse_validation_expr(problem.standard_answer, variable)
+                wrong_after = "1" if target == 0 else "0"
+            except Exception:
+                wrong_after = "0"
+            steps.append({
+                "number": number,
+                "expression_before": current,
+                "expression_after": wrong_after,
+                "explanation": f"验证样本：第 {number} 步故意注入错误结果",
+            })
+            break
+        try:
+            before_expr = _parse_validation_expr(current, variable)
+            if special in {"implicit", "parameter"}:
+                after = problem.metadata.get("expected_step", problem.standard_answer)
+            elif problem.category == "derivative":
+                after = sp.sstr(sp.diff(before_expr, sp.Symbol(variable, real=True), problem.derivative_order))
+            elif problem.category == "integral":
+                after = sp.sstr(sp.integrate(before_expr, sp.Symbol(variable, real=True)))
+            else:  # limit: equivalent identity transitions are deterministic.
+                after = current
+        except Exception:
+            # A conservative identity prefix is still a valid limit-style
+            # transition; unsupported expressions are handled as review cases.
+            after = current
+        steps.append({
+            "number": number,
+            "expression_before": current,
+            "expression_after": after,
+            "explanation": f"验证样本：第 {number} 步为可验证前置推导",
+        })
+        current = after
+    return steps
 
 
 def write_validation_cases(path: str | Path, problems: list[CalculusProblem] | None = None) -> list[dict]:

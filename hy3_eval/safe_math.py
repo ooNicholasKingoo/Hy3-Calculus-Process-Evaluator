@@ -6,9 +6,13 @@ from sympy.parsing.sympy_parser import (
     standard_transformations,
 )
 
-_ALLOWED = {"sin": sp.sin, "cos": sp.cos, "tan": sp.tan, "exp": sp.exp, "log": sp.log,
+_ALLOWED = {"sin": sp.sin, "cos": sp.cos, "tan": sp.tan, "exp": sp.exp, "log": sp.log, "ln": sp.log,
             "sqrt": sp.sqrt, "pi": sp.pi, "E": sp.E, "oo": sp.oo, "Abs": sp.Abs,
-            "asin": sp.asin, "acos": sp.acos, "atan": sp.atan}
+            "asin": sp.asin, "acos": sp.acos, "atan": sp.atan,
+            # Presentation and validation of higher-calculus notation.
+            "Integral": sp.Integral, "integrate": sp.Integral,
+            "Derivative": sp.Derivative, "Limit": sp.Limit,
+            "limit": sp.Limit}
 
 def parse_expr(text: str, variable: str = "x") -> sp.Expr:
     if not text or len(text) > 500:
