@@ -55,6 +55,8 @@ Copy-Item .env.example .env
 
 Windows 下也可以在项目目录执行 `powershell -ExecutionPolicy Bypass -File .\start_app.ps1`。脚本优先使用 `.venv`，并兼容当前旧目录 `venv`；它会检查 8765 端口、避免重复启动、启动后台 Streamlit 并打开浏览器。运行 `powershell -ExecutionPolicy Bypass -File .\check_app.ps1` 查看健康状态，运行 `powershell -ExecutionPolicy Bypass -File .\stop_app.ps1` 停止本项目占用的 Python 服务。若浏览器提示 localhost 拒绝连接，先运行启动脚本，不要只刷新旧页面。
 
+最简单的启动方式是双击项目根目录中的 `run_app.cmd`。它会自动调用初始化脚本（首次运行时）、选择 `.venv` 或旧版 `venv`，检查端口并打开 `http://localhost:8765`。因此不需要激活虚拟环境，也不需要修改系统执行策略。`localhost` 是本机应用地址，不是部署在公网的固定网站；每次重启电脑后都要先运行 `run_app.cmd`，再打开浏览器地址。
+
 项目环境目录说明：新下载项目使用 `.venv`；旧版本可能有 `venv`，启动脚本会临时兼容，但不应把任何虚拟环境提交到 Git。PowerShell 执行策略受限时，使用上面的 `powershell -ExecutionPolicy Bypass -File ...` 或直接使用 `.venv\Scripts\python.exe`。
 
 也可以启动页面后，在左侧“Hy3 连接”中临时输入 TokenHub API Key。该输入只保存在当前会话内存中，不会写入文件；正式复现建议使用 `.env`。
@@ -114,6 +116,7 @@ Windows 下也可以在项目目录执行 `powershell -ExecutionPolicy Bypass -F
 - `data/validation_cases.jsonl`：过程评估有效性验证样本
 - `app.py`：Streamlit 应用
 - `setup_app.ps1`：下载后的首次环境初始化
+- `run_app.cmd`：Windows 用户双击启动入口
 
 ## 下载后验收
 
