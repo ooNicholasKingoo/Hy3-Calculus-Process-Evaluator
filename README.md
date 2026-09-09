@@ -3,6 +3,7 @@
 Hy3 高等数学推理过程评估器是腾讯犀牛鸟开源实战活动的个人作品。它使用腾讯混元 Hy3 生成微积分解题过程，再用 SymPy 和数值方法检查答案、步骤关系与定理条件。
 
 > 本项目为个人/活动作品，不代表腾讯官方产品。
+> demo展示视频：https://www.bilibili.com/video/BV18SYt6EEWA/?vd_source=23dfdf9c8c9bb59ef104c14a99fc2c81
 
 ## 范围
 
